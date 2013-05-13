@@ -4,14 +4,8 @@ _Licensed under the MIT license: http://opensource.org/licenses/MIT_
 
 ## Features
 
-* Supports OPTGROUPS
-* Supports standard dropdown controls
-* Supports multi-select controls (i.e. multiple="multiple")
-* Supports inline controls (i.e. size="5")
-* Fully accessible via keyboard
-* Shift + click (or shift + enter) to select a range of options in multi-select controls
-* Type to search when the control has focus
-* Auto-height based on the size attribute (to use, omit the height property in your CSS!)
+* Supports all features of SELECT elements
+* Supports CSS styleable
 * Tested in IE7-IE10, recent WebKit browsers, Firefox, and Opera
 
 
@@ -33,18 +27,18 @@ To initialize:
 
 OOP-style
 ```javascript
-$('.select').select();
+new Select({elements: '.select'});
 ```
 jQuery-style
 ```javascript
-new Select();
+$('.select').select();
 ```
 
-## Settings
+## Arguments
 
 | Key            | Default       | Values                     | Description                                      |
 | ---------------|:-------------:|---------------------------:|-------------------------------------------------:|
-| elements       | `select`      | String                     | A string containing a selector expression        |
+| elements       | `select`      | String                     | elements who want in stage, same as jQuery()     |
 
 
 
@@ -52,22 +46,23 @@ new Select();
 
 To call a method use this syntax:
 
-```javascript
-$('select').selectBox('methodName', [option]);
-```
-
 OOP-style
 ```javascript
-var selectBox = new SelectBox($('#mySelectBox'), settings = {});
-selectBox.showMenu();
+var selectBox = new Select({elements: '.select'});
+selectBox.refactor();
 ```
+jQuery-style
+```javascript
+$('select').select('methodName', [option]);
+```
+
 
 ### Available methods
 
 
 | Key            | Description                                                                                   |
 | ---------------|-----------------------------------------------------------------------------------------------|
-| create         | Creates the control (default)                                                                 |
+| refactor       | refactor component when dataSource change                                                     |
 
 
 
@@ -75,8 +70,16 @@ selectBox.showMenu();
 
 Events are fired on the original select element. You can bind events like this:
 
+OOP-style
 ```javascript
-$('select').selectBox().change(function () {
+var selectBox = new Select({elements: '.select'});
+selectBox.sub('change', function (element) {
+    alert($(element).val());
+});
+```
+jQuery-style
+```javascript
+$('select').select().change(function () {
     alert($(this).val());
 });
 ```
