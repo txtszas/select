@@ -1,0 +1,71 @@
+.select {
+    height: 28px;
+    line-height: 28px;
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    border: 1px solid #BDC7D8;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #fafafa;
+    padding: 0 12px;
+    width: 74px;
+    margin-top: 1px;
+    white-space: nowrap;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+.select .ico {
+    display: inline-block;
+    background-repeat: no-repeat;
+    zoom: 1;
+    *display: inline;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    width: 11px;
+    height: 7px;
+}
+.select .ico-arrow-up {
+    background-image: url(ico-arrow-up.png);
+}
+.select .ico-arrow-down {
+    background-image: url(ico-arrow-down.png);
+}
+.select span {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    font-weight: normal;
+}
+.select .select-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #c1c1c1;
+    background-color: #ffffff;
+    color: #6699cc;
+    cursor: pointer;
+    line-height: 28px;
+    z-index: 1001;
+}
+.select ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+}
+.select li {
+    height: 28px;
+    padding: 0 12px;
+    display: block;
+}
+.select li.active {
+    color: #999999;
+}
