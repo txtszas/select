@@ -1,3 +1,6 @@
 [submodule "class"]
 	path = class
 	url = git://github.com/viclm/class.git
+[submodule "libs"]
+	path = libs
+	url = git://github.com/viclm/libs.git
